@@ -1,0 +1,17 @@
+project:
+  name: "Gaia OS Core"
+  version: "0.1.0-alpha"
+  lead_developer: "Apolo"
+  contact:
+    email: "apolo2211@gmail.com"
+    phone: "+213675137284"
+
+infrastructure:
+  nodes: ["Starlink-Alpha", "Tesla-Grid-TX", "Mars-Relay-1"]
+  security: "Post-Quantum-Lattice-256"
+  sync_interval: "1ns"
+
+modules:
+  power_optimization: true
+  autonomous_transport: true
+  neural_interface: false # Experimental
