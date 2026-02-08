@@ -1,0 +1,12 @@
+name: Gaia OS Demo
+on: [push]
+
+jobs:
+  run-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Gaia OS Build & Demo
+        run: |
+          chmod +x build_all.sh
+          ./build_all.sh
