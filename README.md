@@ -33,4 +33,4 @@ For high-level integration, technology audit, or investment proposals:
 - **Lead Developer:** Apolo
 - **Email:** apolo2211@gmail.com
 - **Phone:** +213 675 13 72 84
-- **Location:** Algeria (Strategic hub for Gaia-Power North Africa Pilot)
+- **Location:** Algeria (Strategic hub for Gaia-Power North Africa Pilot)# Gaia-OS-Core
