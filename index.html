@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaia OS | Dashboard Planétaire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #050505; color: #00ffc3; font-family: 'Courier New', monospace; }
+        .grid-bg { background-image: linear-gradient(#111 1px, transparent 1px), linear-gradient(90deg, #111 1px, transparent 1px); background-size: 40px 40px; }
+        .status-pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+    </style>
+</head>
+<body class="grid-bg min-h-screen p-8">
+    <header class="border-b border-[#00ffc3] pb-4 mb-8 flex justify-between items-center">
+        <div>
+            <h1 class="text-3xl font-bold tracking-tighter uppercase">Gaia OS <span class="text-xs font-normal border border-[#00ffc3] px-2 ml-2">Alpha v0.1</span></h1>
+            <p class="text-sm opacity-70">Système d'Exploitation Civilisationnel | Lead: Apolo</p>
+        </div>
+        <div class="text-right">
+            <p class="text-xs">CONTACT: apolo2211@gmail.com</p>
+            <p class="text-xs">TEL: +213 675 13 72 84</p>
+        </div>
+    </header>
+
+    <main class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="border border-[#00ffc3] p-4 bg-black/50">
+            <h2 class="text-xl mb-4 border-b border-[#00ffc3]/30">⚡ GAIA-POWER (Tesla Grid)</h2>
+            <div class="space-y-2">
+                <div class="flex justify-between"><span>Efficacité:</span><span id="eff">99.98%</span></div>
+                <div class="w-full bg-gray-800 h-2"><div class="bg-[#00ffc3] h-full" style="width: 99%"></div></div>
+                <p class="text-xs mt-4">Statut: Optimisation des Megapacks Texas stable.</p>
+            </div>
+        </div>
+
+        <div class="border border-[#00ffc3] p-4 bg-black/50">
+            <h2 class="text-xl mb-4 border-b border-[#00ffc3]/30">🚀 GAIA-MOVE (SpaceX/Starlink)</h2>
+            <div class="space-y-2">
+                <div class="flex justify-between"><span>Lien Starlink:</span><span class="status-pulse text-green-400">ACTIF</span></div>
+                <div class="flex justify-between"><span>Latence:</span><span>0.0004ms</span></div>
+                <p class="text-xs mt-4">Flux: Routage orbital Quantum-Fabric synchronisé.</p>
+            </div>
+        </div>
+
+        <div class="border border-[#00ffc3] p-4 bg-black/50 md:col-span-1">
+            <h2 class="text-xl mb-4 border-b border-[#00ffc3]/30">🛰️ SYSTEM LOG</h2>
+            <div class="text-[10px] h-32 overflow-hidden" id="console">
+                <p>> Booting Gaia Kernel...</p>
+                <p>> Quantum link established.</p>
+                <p>> Initializing Global Grid...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-12 text-center text-[10px] opacity-50 italic">
+        "Transitioning humanity from fragmented systems to a Type I Civilization."
+    </footer>
+
+    <script>
+        // Simulation de logs en temps réel
+        const consoleDiv = document.getElementById('console');
+        setInterval(() => {
+            const p = document.createElement('p');
+            p.innerText = `> Global Node Sync: ${Math.random().toString(16).substr(2, 8)} verified.`;
+            consoleDiv.appendChild(p);
+            if (consoleDiv.childNodes.length > 10) consoleDiv.removeChild(consoleDiv.firstChild);
+        }, 2000);
+    </script>
+</body>
+</html>
