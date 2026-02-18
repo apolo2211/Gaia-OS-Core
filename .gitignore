@@ -1,2 +1,14 @@
+# Ne pas envoyer l'environnement virtuel
+venv/
 node_modules/
 .env
+
+# Ne JAMAIS envoyer les preuves de failles (2M$ en jeu !)
+logs/security/
+reports/
+evidence_*.json
+
+# Fichiers temporaires système
+__pycache__/
+*.log
+.DS_Store
