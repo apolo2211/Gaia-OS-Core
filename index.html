@@ -10,6 +10,7 @@
         .grid-bg { background-image: linear-gradient(#111 1px, transparent 1px), linear-gradient(90deg, #111 1px, transparent 1px); background-size: 40px 40px; }
         .status-pulse { animation: pulse 2s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+        .alert-glow { box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); }
     </style>
 </head>
 <body class="grid-bg min-h-screen p-8">
@@ -30,25 +31,41 @@
             <div class="space-y-2">
                 <div class="flex justify-between"><span>Efficacité:</span><span id="eff">99.98%</span></div>
                 <div class="w-full bg-gray-800 h-2"><div class="bg-[#00ffc3] h-full" style="width: 99%"></div></div>
-                <p class="text-xs mt-4">Statut: Optimisation des Megapacks Texas stable.</p>
+                <p class="text-xs mt-4 opacity-70">Statut: Optimisation des Megapacks Texas stable.</p>
             </div>
         </div>
 
         <div class="border border-[#00ffc3] p-4 bg-black/50">
             <h2 class="text-xl mb-4 border-b border-[#00ffc3]/30">🚀 GAIA-MOVE (SpaceX/Starlink)</h2>
             <div class="space-y-2">
-                <div class="flex justify-between"><span>Lien Starlink:</span><span class="status-pulse text-green-400">ACTIF</span></div>
+                <div class="flex justify-between"><span>Lien Starlink:</span><span class="status-pulse text-green-400 font-bold">ACTIF</span></div>
                 <div class="flex justify-between"><span>Latence:</span><span>0.0004ms</span></div>
-                <p class="text-xs mt-4">Flux: Routage orbital Quantum-Fabric synchronisé.</p>
+                <p class="text-xs mt-4 opacity-70">Flux: Routage orbital Quantum-Fabric synchronisé.</p>
             </div>
         </div>
 
-        <div class="border border-[#00ffc3] p-4 bg-black/50 md:col-span-1">
-            <h2 class="text-xl mb-4 border-b border-[#00ffc3]/30">🛰️ SYSTEM LOG</h2>
-            <div class="text-[10px] h-32 overflow-hidden" id="console">
-                <p>> Booting Gaia Kernel...</p>
-                <p>> Quantum link established.</p>
-                <p>> Initializing Global Grid...</p>
+        <div id="shield-card" class="border border-[#00ffc3] p-4 bg-black/50 transition-all duration-500">
+            <h2 class="text-xl mb-4 border-b border-[#00ffc3]/30">🛡️ GAIA-SHIELD (Audit)</h2>
+            <div class="space-y-2">
+                <div class="flex justify-between font-bold">
+                    <span>Cible:</span><span class="text-yellow-400">APPLE-INFRA (2M$)</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Scan IA:</span><span id="scan-status" class="text-green-400 uppercase">En cours...</span>
+                </div>
+                <div id="alert-box" class="hidden mt-4 p-2 bg-red-900/50 border border-red-500 text-[10px] text-red-200 animate-pulse">
+                    ⚠️ ANOMALIE DÉTECTÉE : BRÈCHE POTENTIELLE (LOG CAPTURED)
+                </div>
+                <p class="text-[9px] mt-2 opacity-60">Protocole: Discrétion Starlink Quantum-Mask.</p>
+            </div>
+        </div>
+
+        <div class="border border-[#00ffc3] p-4 bg-black/50 md:col-span-3">
+            <h2 class="text-xl mb-4 border-b border-[#00ffc3]/30 uppercase">🛰️ System Log & Gaia-Mind Output</h2>
+            <div class="text-[11px] h-48 overflow-y-auto scrolling-touch" id="console">
+                <p class="text-blue-400">> Booting Gaia Kernel Alpha v0.1...</p>
+                <p class="text-blue-400">> Quantum link established via Starlink Node-1.</p>
+                <p class="text-blue-400">> Initializing Global Grid Control...</p>
             </div>
         </div>
     </main>
@@ -58,14 +75,59 @@
     </footer>
 
     <script>
-        // Simulation de logs en temps réel
         const consoleDiv = document.getElementById('console');
+        const alertBox = document.getElementById('alert-box');
+        const shieldCard = document.getElementById('shield-card');
+        const scanStatus = document.getElementById('scan-status');
+
+        // 1. Simulation de logs de synchronisation globale
         setInterval(() => {
             const p = document.createElement('p');
-            p.innerText = `> Global Node Sync: ${Math.random().toString(16).substr(2, 8)} verified.`;
+            const nodeID = Math.random().toString(16).substr(2, 8);
+            p.innerText = `> Global Node Sync: ${nodeID} verified. Data-packet routed.`;
             consoleDiv.appendChild(p);
-            if (consoleDiv.childNodes.length > 10) consoleDiv.removeChild(consoleDiv.firstChild);
-        }, 2000);
+            
+            // Auto-scroll vers le bas
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+            
+            if (consoleDiv.childNodes.length > 50) consoleDiv.removeChild(consoleDiv.firstChild);
+        }, 1500);
+
+        // 2. Logique de détection GAIA-SHIELD (Simulation d'audit IA)
+        // L'IA Gaia-Mind analyse les failles Apple/Google en tâche de fond
+        setInterval(() => {
+            const detectionRoll = Math.random();
+            
+            // Si l'IA trouve une instabilité (Probabilité simulée pour la démo)
+            if (detectionRoll > 0.92) { 
+                triggerSecurityAlert();
+            }
+        }, 8000);
+
+        function triggerSecurityAlert() {
+            // Changement visuel Alerte
+            alertBox.classList.remove('hidden');
+            shieldCard.classList.replace('border-[#00ffc3]', 'border-red-500');
+            shieldCard.classList.add('alert-glow');
+            scanStatus.innerText = "ALERTE FAILLE";
+            scanStatus.classList.replace('text-green-400', 'text-red-500');
+            
+            // Ajout au log système
+            const p = document.createElement('p');
+            p.className = "text-red-500 font-bold bg-red-900/20";
+            p.innerText = `> [CRITICAL] Gaia-Mind detected Server Instability on Apple-Auth-Service. Payload evidence stored in /logs/security/`;
+            consoleDiv.appendChild(p);
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+            
+            // Retour à la normale après 6 secondes
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+                shieldCard.classList.replace('border-red-500', 'border-[#00ffc3]');
+                shieldCard.classList.remove('alert-glow');
+                scanStatus.innerText = "En cours...";
+                scanStatus.classList.replace('text-red-500', 'text-green-400');
+            }, 6000);
+        }
     </script>
 </body>
 </html>
