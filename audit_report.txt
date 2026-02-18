@@ -1,5 +1,5 @@
-=== GAIA OS SECURITY REPORT - 2026-02-19 00:14:56 ===
-Lead Investigator: Apolo
+=== GAIA OS SECURITY REPORT - 2026-02-19 00:22:13 ===
+Investigateur : Apolo | Reseau : Starlink/Quantum-Link
 
 
 🛰️ --- DEBUT DE L'AUDIT GAIA : www.entp.dz ---
@@ -7,16 +7,21 @@ Lead Investigator: Apolo
 🌐 IP: 80.249.75.226 (Resolution OK)
 🔍 Gaia-Mind analyse les ports pour entp.dz...
 📡 Ports detectes : {80: 'FERME', 443: 'OUVERT', 8080: 'FERME', 21: 'FERME'}
-❌ Erreur HTTP : Connexion impossible ou refusee sur le port standard.
+❌ Erreur HTTP : Le serveur sur www.entp.dz ne répond pas aux requêtes Gaia.
 
 🛰️ --- DEBUT DE L'AUDIT GAIA : www.algerietelecom.dz ---
 🧬 Analyse DNS-Health pour algerietelecom.dz...
 🌐 IP: 197.112.104.251 (Resolution OK)
 🔍 Gaia-Mind analyse les ports pour algerietelecom.dz...
 📡 Ports detectes : {80: 'OUVERT', 443: 'OUVERT', 8080: 'FERME', 21: 'FERME'}
-📊 Latence: 984.46ms | Score Securite: 100/100
+📊 Latence: 137.23ms | Score Securite: 100/100
 
 🛰️ --- DEBUT DE L'AUDIT GAIA : www.poste.dz ---
 🧬 Analyse DNS-Health pour poste.dz...
-🌐 ALERTE: Resolution DNS impossible (Potentiel Hijacking ou Blocage)
+⚠️ Echec de resolution standard. Tentative via Google DNS (8.8.8.8) simulee...
+🌐 ALERTE: Résolution DNS impossible (Blocage probable du FAI)
 🔍 Gaia-Mind analyse les ports pour poste.dz...
+❌ Scan de ports interrompu pour poste.dz: Host introuvable.
+📡 Ports detectes : {80: 'INACCESSIBLE', 443: 'INACCESSIBLE', 8080: 'INACCESSIBLE', 21: 'INACCESSIBLE'}
+📊 Latence: 63.23ms | Score Securite: 50/100
+⚠️ Rapport : Manque de Headers de protection (Anti-XSS/Clickjacking).
