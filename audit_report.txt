@@ -1,0 +1,22 @@
+=== GAIA OS SECURITY REPORT - 2026-02-19 00:14:56 ===
+Lead Investigator: Apolo
+
+
+🛰️ --- DEBUT DE L'AUDIT GAIA : www.entp.dz ---
+🧬 Analyse DNS-Health pour entp.dz...
+🌐 IP: 80.249.75.226 (Resolution OK)
+🔍 Gaia-Mind analyse les ports pour entp.dz...
+📡 Ports detectes : {80: 'FERME', 443: 'OUVERT', 8080: 'FERME', 21: 'FERME'}
+❌ Erreur HTTP : Connexion impossible ou refusee sur le port standard.
+
+🛰️ --- DEBUT DE L'AUDIT GAIA : www.algerietelecom.dz ---
+🧬 Analyse DNS-Health pour algerietelecom.dz...
+🌐 IP: 197.112.104.251 (Resolution OK)
+🔍 Gaia-Mind analyse les ports pour algerietelecom.dz...
+📡 Ports detectes : {80: 'OUVERT', 443: 'OUVERT', 8080: 'FERME', 21: 'FERME'}
+📊 Latence: 984.46ms | Score Securite: 100/100
+
+🛰️ --- DEBUT DE L'AUDIT GAIA : www.poste.dz ---
+🧬 Analyse DNS-Health pour poste.dz...
+🌐 ALERTE: Resolution DNS impossible (Potentiel Hijacking ou Blocage)
+🔍 Gaia-Mind analyse les ports pour poste.dz...
