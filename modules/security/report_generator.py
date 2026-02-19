@@ -75,3 +75,6 @@ if __name__ == "__main__":
 
     for t in targets:
         generate_pro_report(t["name"], t["score"], t["findings"])
+        # Test pour Tesla (Bounty Hunter Mode)
+    tesla_findings = "Security Header analysis: Missing 'Content-Security-Policy' on main domain. Vulnerability: Clickjacking & XSS risk. Subdomain 'vpn.tesla.com' detected and needs deep audit."
+    generate_pro_report("Tesla.com", 50, tesla_findings)
