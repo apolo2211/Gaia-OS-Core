@@ -11,7 +11,7 @@ def send_gaia_alert(subject, body):
     sender_email = "apolo2211@gmail.com"
     receiver_email = "apolo2211@gmail.com"
     # IMPORTANT: Remplace par ton mot de passe d'application Google (16 caractères)
-    app_password = "VOTRE_MOT_DE_PASSE_APPLICATION" 
+    app_password = "keyledlixvsjnabb" 
 
     message = MIMEMultipart()
     message["From"] = f"Gaia OS Shield <{sender_email}>"

@@ -1,0 +1,8 @@
+{
+    "apple.com": [],
+    "tesla.com": [],
+    "google.com": [
+        "api.google.com",
+        "vpn.google.com"
+    ]
+}
