@@ -1,0 +1,13 @@
+🌍 --- DÉPLOYEMENT GAIA-MIND GLOBAL ---
+
+--- CATÉGORIE : Algérie ---
+📡 www.poste.dz | Latence: 62.50ms | Score: 50/100
+📡 www.algerietelecom.dz | Latence: 3330.66ms | Score: 50/100
+
+--- CATÉGORIE : Tech_Giants ---
+📡 www.apple.com | Latence: 203.14ms | Score: 100/100
+📡 www.google.com | Latence: 281.24ms | Score: 0/100
+📡 www.tesla.com | Latence: 187.50ms | Score: 50/100
+
+--- CATÉGORIE : Infrastructure ---
+📡 www.starlink.com | Latence: 312.47ms | Score: 100/100
